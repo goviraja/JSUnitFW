@@ -4,11 +4,19 @@
  */
 
 /*
- Commands to set up Protractor in your env :
- 1) npm install -g protractor
- 2) webdriver-manager update
- 3) webdriver-manager start
- 4) protractor ./test/protractor/conf.js
+
+Assumption: your local machine should have Node JS and NPM latest version!!!
+
+Commands to set up Protractor/Web-driver in your env :
+
+1.sudo npm install -g protractor
+2.sudo npm install protractor-jasmine2-screenshot-reporter
+3.sudo webdriver-manager update
+4.webdriver-manager start -leave it in a separate terminal
+5.git clone https://github.com/goviraja/JSUnitFW.git on your local box and move on to "test" folder
+6. protractor ./test/protractor/conf.js
+Note: By default, it launches chrome browser, if you need to switch to firefox it will launch firefox. eg: protractor ./test/protractor/conf.js --browserName=firefox
+
  */
 'use strict'
 
@@ -16,7 +24,7 @@ var HtmlReporter = require('protractor-jasmine2-screenshot-reporter');
 
 var reporter = new HtmlReporter({
     dest: './test/protractor/screenshots',
-    filename: 'html-report.html',
+    filename: 'smartship-report.html',
     reportTitle: "SmartShip :Dev Test Results"
 });
 
